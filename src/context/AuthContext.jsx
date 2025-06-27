@@ -32,7 +32,7 @@ export const AuthProvider = ({children}) => {
             const {token, user: userData} = response.data;
 
             localStorage.setItem('token',token)
-            localStorage.setItem('user',JSON.parse(userData))
+            localStorage.setItem('user',JSON.stringify(userData))
             setUser(userData)
 
             toast.success("Login Successful")
@@ -40,6 +40,7 @@ export const AuthProvider = ({children}) => {
         } catch (error) {
             const message = error.response?.data?.message || "Login failed"
             toast.error(message)
+            console.log(error)
             return {success: false,message}
         }
     }
@@ -52,6 +53,7 @@ export const AuthProvider = ({children}) => {
         } catch (error) {
             const message = error.response?.data?.message || 'Registration failed'
             toast.error(message)
+            console.log(error)
             return {success:false,message}
         }
     }

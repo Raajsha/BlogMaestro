@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4">
             <div className="flex justify-between items-center h-16">
                 <Link to ="/"
-                className='flex items-center space-x-2 text-x1 font-bold text-primary-600 hover:text-primary-700 transition-colors'>
+                className='flex items-center space-x-2 text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors'>
                     <Home size={24} />
                     <span>BlogMaestro</span>
                 </Link>

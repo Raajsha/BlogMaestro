@@ -5,7 +5,7 @@ const API_BASE_URL ='http://localhost:5001/api'
 const api = axios.create({
     baseURL: API_BASE_URL,
     headers : {
-        'Content type' : 'application/json',
+        'Content-Type' : 'application/json',
     },
 })
 
@@ -30,8 +30,8 @@ api.interceptors.request.use(
 )
 
 export const authAPI = {
-    login: (credentials) => api.post('auth/login', credentials),
-    register: (userData) => api.post('auth/register',userData)
+    login: (credentials) => api.post('/auth/login', credentials),
+    register: (userData) => api.post('/auth/register',userData)
 }
 
 export const postsAPI = {
