@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav className='bg-white shadow-lg border-b border-gray-200 overflow-x-hidden'>
         <div className="container mx-auto px-4">
             <div className="flex justify-between items-center min-h-16">
-                <Link to ="/"
+                <Link to ="/homepage"
                 className='flex items-center space-x-2 text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors'>
                     <Home size={24} />
                     <span>BlogMaestro</span>

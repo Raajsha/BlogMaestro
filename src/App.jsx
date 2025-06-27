@@ -5,10 +5,11 @@ import LoginPage from './pages/LoginPage.jsx'
 import Navbar from './components/Navbar.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import HomePage from './pages/HomePage.jsx'
+import ProfilePage from './pages/ProfilePage.jsx'
 
 const App = ()  =>{
   return (
-    <div className='min-h-screen bg-gray-50 overflow-visible'>
+    <div className='min-h-screen bg-gray-50 '>
       <Navbar />
       <main className="container mx-auto">
         <Routes>
@@ -17,9 +18,20 @@ const App = ()  =>{
           <Route 
             path = '/homepage'
             element = {
-            <ProtectedRoute>
-              <HomePage />
-            </ProtectedRoute>} />
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path = '/profile/:id'
+            element = {
+              <ProtectedRoute>
+                <ProfilePage />
+              </ProtectedRoute> 
+            } 
+          />
+          
         </Routes>
       </main>
     </div>

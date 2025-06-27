@@ -48,7 +48,7 @@ const HomePage = () => {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl font-bold mt-6 text-gray-900 mb-4">
           Welcome To BlogApp
         </h1>
         <p className="text-xl text-gray-600">
