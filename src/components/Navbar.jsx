@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext.jsx'
 import {PenTool,User,LogOut,Home} from 'lucide-react'
 
 const Navbar = () => {
-    const {user, logout, isAutheticated} = useAuth();
+    const {user, logout, isAuthenticated} = useAuth();
     const navigate = useNavigate()
 
     const handleLogout = () => {
@@ -11,9 +11,9 @@ const Navbar = () => {
         navigate('/')
     }
   return (
-    <nav className='bg-white shadow-lg border-b border-gray-200'>
+    <nav className='bg-white shadow-lg border-b border-gray-200 overflow-x-hidden'>
         <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center h-16">
+            <div className="flex justify-between items-center min-h-16">
                 <Link to ="/"
                 className='flex items-center space-x-2 text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors'>
                     <Home size={24} />
@@ -21,7 +21,7 @@ const Navbar = () => {
                 </Link>
 
                 <div className="flex items-center space-x-4">
-                    {isAutheticated ? (
+                    {isAuthenticated ? (                        
                         <>
                             <Link 
                             to ="/create"
@@ -40,9 +40,8 @@ const Navbar = () => {
 
                             <button
                             onClick  = {handleLogout}
-                            className='flex items-center space-x-1 text-gray-700 hover:text-red-600 transition-colors'>
+                            className='relative group flex items-center space-x-1 text-gray-700 hover:text-red-600 transition-colors '>
                                 <LogOut size = {16} />
-                                <span>Logout</span>
                             </button>
                         </>
                     ): (
