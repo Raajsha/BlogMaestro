@@ -7,7 +7,7 @@ import toast from 'react-hot-toast'
 const CommentSection = ({postId}) => {
     const {user,isAuthenticated} = useAuth()
     const [comments,setComments] = useState([])
-    const [newComment, setNewComments] = useState('')
+    const [newComment, setNewComment] = useState('')
     const [editingComment, setEditingComment] = useState(null)
     const [editText, setEditText] = useState('')
     const [loading, setLoading] = useState(true)
@@ -32,15 +32,17 @@ const CommentSection = ({postId}) => {
             if(!newComment.trim()) return
 
             try {
-                const response = await comments.API.create({
+                const response = await commentsAPI.create({
                     postId,
                     text: newComment
                 })
                 setComments([response.data,...comments])
-                setNewComments('')
+                setNewComment('')
                 toast.success("Comment added!")
+                console.log(response.data)
             } catch (error) {
                 toast.error('Failed to add comment')
+                console.log(error)
             }
     }
 
@@ -130,15 +132,15 @@ const CommentSection = ({postId}) => {
                     </p>
                 ):(
                     comments.map((comment) => (
-                        <div key={comment._id} className="bg-gray-50 rounded-lg p-4 animate-slide-up">
+                        <div key={comment._id} className="bg-gray-50 rounded-lg border border-gray-300 p-4 animate-slide-up">
                             <div className="flex items-start justify-between mb-2">
                                 <div className="text-sm text-gray-600">
-                                    <span className="font-medium">User</span>
+                                    <span className="font-medium">{comment.userId.username}</span>
                                     <span className="mx-2">•</span>
                                     <span>{formatDate(comment.createdAt)}</span>
                                 </div>
 
-                                {user && user.user === comment.userId && (
+                                {user && (user.user === (comment.userId._id || comment.userId) ) && (
                                     <div className="flex space-x-2">
                                         <button 
                                         onClick={() => {

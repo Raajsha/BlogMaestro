@@ -13,7 +13,7 @@ const PostCard = ({post}) => {
   return (
     <div className='bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden animate-fade-in'>
       <div className="p-6">
-        <Link to = {`/post/${post._id}`}>
+        <Link to = {`/posts/${post._id}`}>
           <h2 className='text-x1 font-semibold text-gray-900 mb-3 hover:text-primary-600 transition-colors line-slamp-2'>
             {post.title}
           </h2>
@@ -27,7 +27,7 @@ const PostCard = ({post}) => {
             <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-1">
                     <User size = {14} />
-                    <span>Author</span>
+                    <span>{post.author.username}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                     <Calendar size = {14} />

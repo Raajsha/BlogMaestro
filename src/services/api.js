@@ -38,7 +38,7 @@ export const postsAPI = {
     getAll : () => api.get('/posts'),
     getById: (id) => api.get(`/posts/${id}`),
     create : (postData) => api.post('/posts/create',postData),
-    update: (id,postData) => api.put(`/posts/${id}`),
+    update: (id,postData) => api.put(`/posts/${id}`,postData),
     delete: (id) => api.delete(`/posts/${id}`)
 }
 

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Route,Routes } from 'react-router-dom'
 import SignUp from './pages/SignUp.jsx'
 import LoginPage from './pages/LoginPage.jsx'
@@ -6,6 +5,8 @@ import Navbar from './components/Navbar.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import HomePage from './pages/HomePage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
+import PostDetailsPage from './pages/PostDetailsPage.jsx'
+import CreatePost from './pages/CreatePost.jsx'
 
 const App = ()  =>{
   return (
@@ -31,7 +32,22 @@ const App = ()  =>{
               </ProtectedRoute> 
             } 
           />
-          
+          <Route 
+            path = '/posts/:id' 
+            element = {
+              <ProtectedRoute>
+                <PostDetailsPage />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path = '/create'
+            element = {
+              <ProtectedRoute>
+                <CreatePost />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
     </div>
