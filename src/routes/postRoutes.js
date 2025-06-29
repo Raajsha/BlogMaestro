@@ -1,11 +1,12 @@
 import express from 'express'
-import { getAllPosts,createPost,updatePost,deletePost } from '../controllers/postControllers.js'
+import { getAllPosts,createPost,updatePost,deletePost,getPostById } from '../controllers/postControllers.js'
 import authMiddleware from '../middleware/auth.js';
 
 const PostRouter = express.Router();
 
 //Public Routes
 PostRouter.get('/',getAllPosts);
+PostRouter.get('/:id',getPostById)
 
 //Protected Routes
 PostRouter.post('/create',authMiddleware,createPost);
