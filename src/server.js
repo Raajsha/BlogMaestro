@@ -14,12 +14,10 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-if(process.env.NODE_ENV !== 'production'){
-    app.use(cors({
-        origin: "http://localhost:5173" | process.env.CLIENT_URL,
-        credentials: true,
-    }));
-}
+app.use(cors({
+    origin: "http://localhost:5173" | process.env.CLIENT_URL,
+    credentials: true,
+}));
 app.use(express.json());
 app.use(rateLimiter);
 
