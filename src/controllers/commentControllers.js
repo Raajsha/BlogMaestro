@@ -14,7 +14,9 @@ export const addComment = async (req, res) => {
 
         const newComment = new Comment({ postId, userId, text });
         await newComment.save();
-        res.status(201).json(newComment);
+
+        const populatedComment = await Comment.findById(newComment._id).populate('userId','username');
+        res.status(201).json(populatedComment);
     } catch (error) {
         res.status(500).json({ message: 'Error adding comment', error });
     }
@@ -77,11 +79,11 @@ export const updateComment = async (req, res) => {
 
 export const getCommentsByPost = async (req, res) => {
     try {
-        const { postId } = req.params.postId;
+        const postId  = req.params.postId;
         if (!postId) {
             return res.status(400).json({ message: 'postId is required' });
         }
-        const comments = await Comment.find({ postId }).sort({ createdAt: -1 });
+        const comments = await Comment.find({ postId }).populate('userId','username').sort({ createdAt: -1 });
         res.status(200).json(comments);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching comments', error });

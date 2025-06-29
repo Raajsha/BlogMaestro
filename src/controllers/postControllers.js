@@ -14,7 +14,7 @@ export const createPost = async (req,res) => {
 
 export const getAllPosts = async (req,res) => {
     try {
-        const posts = await Post.find().sort({createdAt: -1}).lean()
+        const posts = await Post.find().sort({createdAt: -1}).populate('author','username').lean()
         if(!posts.length) return res.status(404).json({message: "No posts present"});
         res.status(200).json(posts);
     } catch (error) {
@@ -27,7 +27,7 @@ export const getAllPosts = async (req,res) => {
 export const getPostById = async (req,res) => {
     try {
     const postId = req.params.id;
-    const post = await Post.findById(postId)
+    const post = await Post.findById(postId).populate('author','username')
 
     if(!post) {
         return res.status(404).json({message: 'Post not found'});
