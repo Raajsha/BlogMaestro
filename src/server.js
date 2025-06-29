@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
 
 import {connectDB} from './config/db.js';
 import rateLimiter from './middleware/rateLimiter.js';
@@ -15,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 app.use(cors({
-    origin: "http://localhost:5173" | process.env.CLIENT_URL,
+    origin: "http://localhost:5173" || process.env.CLIENT_URL,
     credentials: true,
 }));
 app.use(express.json());
