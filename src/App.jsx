@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
 import PostDetailsPage from './pages/PostDetailsPage.jsx'
 import CreatePost from './pages/CreatePost.jsx'
+import EditPost from './pages/EditPost.jsx'
 
 const App = ()  =>{
   return (
@@ -47,6 +48,14 @@ const App = ()  =>{
                 <CreatePost />
               </ProtectedRoute>
             }
+          />
+          <Route 
+            path = '/edit/:id'
+            element = {
+              <ProtectedRoute>
+                <EditPost />
+              </ProtectedRoute>
+            } 
           />
         </Routes>
       </main>
