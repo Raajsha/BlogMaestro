@@ -58,7 +58,7 @@ const EditPost = () => {
         try {
             await postsAPI.update(id,formData)
             toast.success('Post updated successfully')
-            navigate(`/post/${id}`)
+            navigate(`/posts/${id}`)
         } catch (error) {
             toast.error('Failed to update post')
         } finally {
