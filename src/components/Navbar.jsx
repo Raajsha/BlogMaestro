@@ -1,6 +1,7 @@
 import {Link,useNavigate} from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
 import {PenTool,User,LogOut,Home} from 'lucide-react'
+import logo from '../assets/Logo.png'
 
 const Navbar = () => {
     const {user, logout, isAuthenticated} = useAuth();
@@ -17,7 +18,7 @@ const Navbar = () => {
                 <Link to ="/homepage"
                 className='flex items-center space-x-2 text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors'>
                     <img 
-                     src = 'src\assets\Logo.png'
+                     src = {logo}
                      alt = 'Logo'
                      className='h-8 w-8 object-contain'
                     />

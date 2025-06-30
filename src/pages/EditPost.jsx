@@ -75,7 +75,7 @@ const EditPost = () => {
     }
   return (
     <div className='max-w-2xl mx-auto mt-10'>
-      <div className="bg-white rounded-lg shadow-md p-8">
+      <div className="animate-slide-up bg-white rounded-lg shadow-md p-8">
         <div className="flex items-center space-x-2 mb-8">
             <Edit2 className='text-primary-600' size = {24} />
             <h1 className="text-3xl font-bold text-gray-900">Edit Post</h1>
@@ -147,7 +147,7 @@ const EditPost = () => {
                 </button>
                 <button 
                   type = 'button'
-                  onClick = {() => navigate(`/post/${id}`)}
+                  onClick = {() => navigate(`/posts/${id}`)}
                   className='px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 hover:text-red-500 transition-colors'>
                     Cancel
                 </button>

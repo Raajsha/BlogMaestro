@@ -75,7 +75,7 @@ const PostDetailsPage = () => {
     <div className="max-w-4xl mx-auto">
       <button
         onClick={() => navigate('/homepage')}
-        className="flex items-center space-x-2 text-gray-600 hover:text-primary-600  mt-3 mb-3 transition-colors"
+        className="flex items-center space-x-2 text-black opacity-65 hover:text-primary-600  mt-3 mb-3 transition-colors"
       >
         <ArrowLeft size={20} />
         <span>Back to posts</span>
