@@ -11,13 +11,19 @@ const Navbar = () => {
         navigate('/')
     }
   return (
-    <nav className='bg-white shadow-lg border-b border-gray-200 overflow-x-hidden'>
+    <nav className='bg-white shadow-lg border-b border-gray-200 '>
         <div className="container mx-auto px-4">
             <div className="flex justify-between items-center min-h-16">
                 <Link to ="/homepage"
                 className='flex items-center space-x-2 text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors'>
-                    <Home size={24} />
-                    <span>BlogMaestro</span>
+                    <img 
+                     src = 'src\assets\Logo.png'
+                     alt = 'Logo'
+                     className='h-8 w-8 object-contain'
+                    />
+                    <span  className="text-[1.8rem] font-bold leading-relaxed bg-gradient-to-tr from-[#4F87FF] to-[#764ba2] bg-clip-text text-transparent">
+                        BlogMaestro
+                    </span>
                 </Link>
 
                 <div className="flex items-center space-x-4">

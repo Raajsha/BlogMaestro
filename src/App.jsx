@@ -11,7 +11,7 @@ import EditPost from './pages/EditPost.jsx'
 
 const App = ()  =>{
   return (
-    <div className='min-h-screen bg-gray-50 '>
+    <div className='min-h-screen bg-gradient-to-b from-[#e0e7ff] via-[#a5b4fc] to-[#312e81] '>
       <Navbar />
       <main className="container mx-auto">
         <Routes>

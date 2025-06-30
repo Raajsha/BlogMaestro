@@ -77,7 +77,7 @@ const HomePage = () => {
       ) : (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
           {filteredPosts.map((post) => (
-            <PostCard key= {post.id} post = {post} />
+            <PostCard key= {post._id} post = {post} />
           ))}
         </div>
       )}

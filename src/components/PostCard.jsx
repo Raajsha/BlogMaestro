@@ -11,7 +11,7 @@ const PostCard = ({post}) => {
     }
 
   return (
-    <div className='bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden animate-fade-in'>
+    <div className='bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden animate-fade-in'>
       <div className="p-6">
         <Link to = {`/posts/${post._id}`}>
           <h2 className='text-x1 font-semibold text-gray-900 mb-3 hover:text-primary-600 transition-colors line-slamp-2'>
