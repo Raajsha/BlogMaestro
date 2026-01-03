@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://blog-maestro.vercel.app",
     credentials: true,
 }));
 app.use(express.json());
