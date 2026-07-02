@@ -7,7 +7,6 @@ import authRoutes from './routes/authRoutes.js';
 import commentRoutes from './routes/commentRoutes.js';
 import postRoutes from './routes/postRoutes.js';
 import userRoutes from './routes/userRoutes.js';
-import authMiddleware from './middleware/auth.js';
 
 dotenv.config();
 const app = express();
@@ -18,7 +17,6 @@ app.use(cors({
     credentials: true,
 }));
 app.use(express.json());
-app.use(authMiddleware);
 app.use('/api/auth', authRoutes);
 app.use('/api/comments',commentRoutes);
 app.use('/api/posts',postRoutes);
