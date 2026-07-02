@@ -9,8 +9,6 @@ BlogMaestro is a modern blogging solution that combines simplicity with powerful
 ## Features
 
 - 📝 **Easy Content Management** - Intuitive editor for creating and editing blog posts
-- 🎨 **Customizable Themes** - Choose from multiple themes or create your own
-- 🔍 **SEO Optimization** - Built-in SEO tools to help your content rank higher
 - 📱 **Responsive Design** - Looks great on desktop, tablet, and mobile devices
 - 🏷️ **Tags & Categories** - Organize your posts with flexible tagging and categorization
 - 💬 **Comments System** - Engage with your readers through comments
@@ -75,22 +73,8 @@ BlogMaestro/
 │   ├── utils/
 │   └── styles/
 ├── public/
-├── tests/
-├── docs/
 └── README.md
 ```
-
-## Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-Please make sure to update tests as appropriate and follow our code style guidelines.
 
 ## Technologies Used
 
@@ -99,14 +83,6 @@ Please make sure to update tests as appropriate and follow our code style guidel
 - **Database**: MongoDB
 - **Styling**: CSS, Tailwind CSS
 - **Version Control**: Git
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-For support, email support@blogmaestro.dev or open an issue in the GitHub repository.
 
 ## Roadmap
 
@@ -120,13 +96,3 @@ For support, email support@blogmaestro.dev or open an issue in the GitHub reposi
 ## Authors
 
 - **Raajsha** - Initial work and maintenance
-
-## Acknowledgments
-
-- Thanks to all contributors
-- Inspired by modern blogging platforms
-- Built with ❤️ for content creators
-
----
-
-**Made with ❤️ by the BlogMaestro team**
